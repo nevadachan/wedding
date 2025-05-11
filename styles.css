@@ -76,6 +76,12 @@ nav a:hover {
 .initials {
   font-size: 4.2em;
   letter-spacing: 0.22em;
+  text-shadow:
+    0 2px 16px #e3c9a6cc,
+    0 0px 2px #fff8ef,
+    0 0px 0px #fff8ef;
+  filter: drop-shadow(0 0 6px #e3c9a6cc);
+  animation: prestige-glow 3.5s ease-in-out infinite alternate;
 }
 .divider {
   margin: 0 20px;
@@ -84,10 +90,20 @@ nav a:hover {
   font-size: 2.1em;
   margin-top: 18px;
   letter-spacing: 0.12em;
+  text-shadow:
+    0 2px 12px #e3c9a699,
+    0 1px 0px #fff8ef;
+  filter: drop-shadow(0 0 4px #e3c9a688);
+  animation: prestige-glow-names 3.5s ease-in-out infinite alternate;
 }
 .date {
   font-size: 1.7em;
   margin-top: 10px;
+  text-shadow:
+    0 2px 10px #e3c9a688,
+    0 1px 0px #fff8ef;
+  filter: drop-shadow(0 0 3px #e3c9a655);
+  animation: prestige-glow-date 3.5s ease-in-out infinite alternate;
 }
 h2 {
   font-size: 2em;
@@ -195,6 +211,50 @@ p, .roadmap-desc, .rsvp-wide, .rsvp-wide input, .rsvp-wide label, .rsvp-wide but
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+@keyframes prestige-glow {
+  0% {
+    text-shadow:
+      0 2px 16px #e3c9a6cc,
+      0 0px 2px #fff8ef,
+      0 0px 0px #fff8ef;
+    filter: drop-shadow(0 0 6px #e3c9a6cc);
+  }
+  100% {
+    text-shadow:
+      0 4px 32px #fff8ef,
+      0 0px 8px #e3c9a6cc,
+      0 0px 0px #fff8ef;
+    filter: drop-shadow(0 0 16px #fff8ef);
+  }
+}
+@keyframes prestige-glow-names {
+  0% {
+    text-shadow:
+      0 2px 12px #e3c9a699,
+      0 1px 0px #fff8ef;
+    filter: drop-shadow(0 0 4px #e3c9a688);
+  }
+  100% {
+    text-shadow:
+      0 4px 24px #fff8ef,
+      0 2px 4px #e3c9a6cc;
+    filter: drop-shadow(0 0 10px #fff8ef);
+  }
+}
+@keyframes prestige-glow-date {
+  0% {
+    text-shadow:
+      0 2px 10px #e3c9a688,
+      0 1px 0px #fff8ef;
+    filter: drop-shadow(0 0 3px #e3c9a655);
+  }
+  100% {
+    text-shadow:
+      0 4px 18px #fff8ef,
+      0 2px 4px #e3c9a6cc;
+    filter: drop-shadow(0 0 8px #fff8ef);
+  }
 }
 .fade-in {
   opacity: 0;
