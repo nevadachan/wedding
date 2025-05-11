@@ -12,7 +12,11 @@
   <header class="hero">
     <img src="images/header.png" alt="Фоновое изображение" class="hero-image">
     <div class="overlay">
-      <h1 class="fade-in initials">A <span class="divider">|</span> G</h1>
+      <h1 class="fade-in initials">
+        <span class="initial-a">A</span>
+        <span class="divider">|</span>
+        <span class="initial-g">G</span>
+      </h1>
       <p class="fade-in names">АНТОН & ГАЯНЭ</p>
       <p class="fade-in date">24.08.25</p>
       <p class="fade-in" id="countdown"></p>
@@ -36,15 +40,21 @@
         </li>
         <li style="margin-bottom: 12px;">
           <span style="color:#a86b5d; font-weight:600; min-width:60px; display:inline-block;">15:00</span>
-          <span>Начало свадебной церемонии (При хорошей погоде она проойдет в роще)</span>
+          <span>Начало свадебной церемонии</span>
+          <div style="color:#a86b5d; font-size:0.92em; opacity:0.85; margin-left:65px; margin-top:2px;">
+            (при хорошей погоде — в роще)
+          </div>
         </li>
         <li style="margin-bottom: 12px;">
           <span style="color:#a86b5d; font-weight:600; min-width:60px; display:inline-block;">15:30</span>
           <span>Фотосессия и фуршет</span>
         </li>
         <li style="margin-bottom: 12px;">
-          <span style="color:#a86b5d; font-weight:600; min-width:60px; display:inline-block;">16:00</span>
-          <span>Свадебный банкет в средневековом зале</span>
+          <span style="color:#a86b5d; font-weight:600; min-width:60px; display:inline-block;">15:00</span>
+          <span>Свадебный банкет</span>
+          <div style="color:#a86b5d; font-size:0.92em; opacity:0.85; margin-left:65px; margin-top:2px;">
+            (средневековый зал)
+          </div>
         </li>
         <li>
           <span style="color:#a86b5d; font-weight:600; min-width:60px; display:inline-block;">22:00</span>
@@ -160,7 +170,7 @@
       </form>
     </div>
   </section>
-  <footer class="fade-in">
+  <footer>
     <p style="margin-top: 48px; margin-bottom: 0; font-size: 1.35em; text-align: center;">
       С любовью, Антон & Гаянэ
     </p>
@@ -252,14 +262,22 @@
       });
       document.addEventListener('mousedown', function (e) {
         if (!palette.contains(e.target) && e.target !== tooltip) {
-          tooltip.style.display = 'none';
-          tooltip.classList.remove('show');
+          if (tooltip.classList.contains('show')) {
+            tooltip.classList.remove('show');
+            setTimeout(() => {
+              tooltip.style.display = 'none';
+            }, 450); 
+          }
         }
       });
       document.addEventListener('touchstart', function (e) {
         if (!palette.contains(e.target) && e.target !== tooltip) {
-          tooltip.style.display = 'none';
-          tooltip.classList.remove('show');
+          if (tooltip.classList.contains('show')) {
+            tooltip.classList.remove('show');
+            setTimeout(() => {
+              tooltip.style.display = 'none';
+            }, 450);
+          }
         }
       });
     })();
